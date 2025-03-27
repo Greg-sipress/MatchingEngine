@@ -20,10 +20,6 @@ public class Main {
 
         SpringApplication.run(Main.class, args);
 
-       // System.out.printf("Hello and welcome!");
-       // OrderGenerator orderGenerator = new OrderGenerator();
-       // orderGenerator.begin();
-
 
     }
 
