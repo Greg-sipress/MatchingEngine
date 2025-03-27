@@ -1,0 +1,22 @@
+/* App.css */
+table {
+  border: 1px solid #ddd;
+  font-family: Arial, sans-serif;
+}
+
+th, td {
+  padding: 8px;
+  text-align: center;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tr:hover {
+  background-color: #f1f1f1;
+}

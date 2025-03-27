@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Order Generator</title>
+</head>
+<body>
+
+    <h1>Order Generator</h1>
+    <button id="startButton">Start Order Generation</button>
+
+    <script>
+        document.getElementById("startButton").addEventListener("click", function () {
+            fetch("http://localhost:8080/api/order-generator/begin", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            })
+            .then(response => response.text())
+            .then(data => {
+                alert(data); // Show success message
+            })
+            .catch(error => {
+                console.error("Error starting order generation:", error);
+                alert("Failed to start order generation.");
+            });
+        });
+    </script>
+</body>
+</html>
