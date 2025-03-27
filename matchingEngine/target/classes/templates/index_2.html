@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Market Data Simulator</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="/js/app.js" defer></script>
+</head>
+<body>
+<div class="container">
+    <h1>Market Data Simulator</h1>
+
+    <!-- Control Panel -->
+    <div class="control-panel">
+        <input type="number" id="rateInput" placeholder="Messages/sec" value="100">
+        <button onclick="startSimulator()">Start</button>
+        <button onclick="stopSimulator()">Stop</button>
+    </div>
+
+    <!-- Data Grid -->
+    <table id="dataGrid">
+        <thead>
+        <tr>
+            <th>Symbol</th>
+            <th>Price</th>
+            <th>Change</th>
+            <th>Volume</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- Filled by JavaScript -->
+        </tbody>
+    </table>
+
+    <!-- Chart -->
+    <div class="chart-container">
+        <canvas id="priceChart"></canvas>
+    </div>
+</div>
+</body>
+</html>

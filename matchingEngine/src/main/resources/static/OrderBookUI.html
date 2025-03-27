@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE ORDER BOOK : Trade Orders WebSocket</title>
+    <script src="https://cdn.jsdelivr.net/npm/sockjs-client/dist/sockjs.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/stompjs/lib/stomp.min.js"></script>
+</head>
+<body>
+<h1>Trade Orders Feed</h1>
+<ul id="trades"></ul>
+<script>
+    // Connect to the WebSocket endpoint
+    const socket = new SockJS('http://localhost:8080/ws');
+    const stompClient = Stomp.over(socket);
+
+    stompClient.connect({}, function(frame) {
+        console.log('Connected: ' + frame);
+
+        // Subscribe to the "/topic/trades" destination
+        stompClient.subscribe('/topic/tradeOrders', function(message) {
+            const trade = message.body;
+            const tradeList = document.getElementById('trades');
+            const listItem = document.createElement('li');
+            listItem.textContent = trade;
+            tradeList.appendChild(listItem);
+        });
+    });
+</script>
+</body>
+</html>
