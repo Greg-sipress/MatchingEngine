@@ -1,7 +1,5 @@
 package org.example.matchingengine;
 
-import org.example.matchingengine.service.OrderBook;
-import org.example.matchingengine.service.OrderGenerator;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cache.annotation.EnableCaching;
