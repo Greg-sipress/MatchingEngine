@@ -12,7 +12,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @EnableCaching
 @EnableScheduling
 public class Main {
-   // private static List<WebSocketSession> sessions = new CopyOnWriteArrayList<>();
+
 
     public static void main(String[] args) {
 
